@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --accent: #66a4ff;
+    --accent-light: #8eb9ff;
+    --accent-dark: #4a8fe8;
+    --ink: #0b0b0f;
+    --muted: #5b6270;
+    --soft: #f5f7fb;
+    --line: #e5e8ee;
+    --white: #ffffff;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-ink font-sans;
+    font-feature-settings: 'ss01', 'cv11';
+    background: hsl(220 16% 98%);
+    min-height: 100vh;
+  }
+
+  /* Subtle blue mesh-gradient backdrop per BrandKit 05-glass-effect */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 80% 60% at 10% 20%, hsla(217 80% 75% / 0.10), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 80%, hsla(230 60% 70% / 0.08), transparent 60%),
+      radial-gradient(ellipse 70% 40% at 50% 10%, hsla(200 60% 75% / 0.06), transparent 60%);
+  }
+
+  /* Focus ring — accent color, subtle */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-accent/40 ring-offset-2 ring-offset-white rounded-md;
+  }
+
+  /* Headline accent word */
+  em.accent-word,
+  .font-serif-italic {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-[11px] uppercase tracking-[0.06em] font-medium text-muted;
+  }
+
+  .glass-panel {
+    background: hsla(0 0% 100% / 0.55);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 0.5px solid hsla(0 0% 100% / 0.6);
+    @apply rounded-lg shadow-glass;
+  }
+
+  .glass-panel-elevated {
+    background: hsla(0 0% 100% / 0.6);
+    backdrop-filter: blur(60px) saturate(200%);
+    -webkit-backdrop-filter: blur(60px) saturate(200%);
+    border: 0.5px solid hsla(0 0% 100% / 0.65);
+    @apply rounded-lg shadow-glass-elevated;
+  }
+
+  /* Inputs — neutral, subtle borders, premium feel */
+  .input-field {
+    @apply w-full px-4 py-3 rounded-md bg-white border border-line text-ink text-[15px] placeholder:text-muted/60 transition focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none;
+  }
+
+  /* Buttons */
+  .btn-ink {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-ink text-white text-sm font-semibold transition hover:bg-ink/90 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-accent text-white text-sm font-semibold transition hover:bg-accent-dark disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-transparent border border-line text-ink text-sm font-medium transition hover:bg-soft;
+  }
+
+  .accent-line {
+    @apply h-[2px] w-12 bg-accent;
+  }
+}
+
+@layer utilities {
+  .container-site {
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-8 lg:px-12;
+  }
+
+  .container-prose {
+    @apply mx-auto w-full max-w-3xl px-6 sm:px-8;
+  }
+
+  .heading-tight {
+    letter-spacing: -0.02em;
+  }
+}
