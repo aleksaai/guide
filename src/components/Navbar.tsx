@@ -8,12 +8,17 @@ export function Navbar() {
       <div className="container-site flex h-16 items-center justify-between sm:h-20">
         <Link
           to="/"
-          className="flex items-baseline gap-2 text-ink font-semibold text-[17px] tracking-tight"
-          aria-label={`${site.name} · ${site.guideName}`}
+          className="flex items-center gap-2 sm:gap-3"
+          aria-label={`${site.name} — ${site.guideName}`}
         >
-          <span>KI-Schule</span>
-          <span className="text-muted font-normal hidden sm:inline">·</span>
-          <span className="text-muted font-normal hidden sm:inline">Guide</span>
+          <img
+            src="/ki-schule-logo.png"
+            alt="KI-Schule"
+            className="h-7 sm:h-8 w-auto"
+            loading="eager"
+            decoding="async"
+          />
+          <span className="hidden sm:inline text-muted text-sm font-normal">· Guide</span>
         </Link>
 
         <a

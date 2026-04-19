@@ -10,6 +10,7 @@ export const site = {
   founder: {
     name: 'Aleksa Spalevic',
     role: 'Gründer KI-Schule',
+    photoUrl: '/aleksa-hero.png',
   },
   company: {
     legalName: 'Spalevic Consulting Kft.',
@@ -24,14 +25,79 @@ export const hero = {
   headlineAccent: 'KI-Team',
   headlinePost: '.',
   subheadline:
-    'Der Guide zeigt dir, wie ich mit Markdown-Dateien und Claude Code ein komplettes virtuelles Team aus Lisa, Patricia und Marcus gebaut habe. Plus wie du das selbst nachbaust — ohne Vorkenntnisse, aber mit echter Tiefe.',
-  formTitle: 'Hol dir den Guide',
-  formSubtitle:
-    'Wir schicken ihn dir in die Inbox. Keine Spam-Serie, kein Verkaufs-Funnel — nur der Guide und gelegentliche Updates, wenn sich was Wichtiges tut.',
+    'Ich hab mein komplettes Backoffice — Buchhaltung, Assistenz, Engineering — als virtuelles KI-Team gebaut. Der Guide zeigt dir Schritt für Schritt, wie du das für dich selbst nachbaust.',
+  trustPills: [
+    '12.000+ Wörter',
+    'Praxis, keine Theorie',
+    'Live im Einsatz seit 2026',
+  ],
+  byline: {
+    prefix: '—',
+    name: 'Aleksa Spalevic',
+    role: 'Gründer KI-Schule',
+  },
+  cta: 'Guide jetzt holen',
+} as const
+
+export const stats = {
+  items: [
+    { value: '80+', label: 'Seiten' },
+    { value: '12.400', label: 'Wörter' },
+    { value: '40+', label: 'Screenshots' },
+    { value: '4', label: 'fertige Agent-Templates' },
+  ],
+} as const
+
+export const formBlock = {
+  eyebrow: 'IN UNTER 60 SEKUNDEN',
+  heading: 'Trag dich ein. Bekomm den Guide.',
+  subheading:
+    'Wir schicken dir den Guide per Mail zu. Kein Verkaufs-Funnel, keine Massen-Mails — nur das Dokument und gelegentliche Updates, wenn sich wirklich was tut.',
+} as const
+
+export const myTeam = {
+  eyebrow: 'DAS IST MEIN ECHTES TEAM',
+  heading: 'Sieben Agenten. Ein System.',
+  subheading:
+    'Jeder Agent hat eine klare Rolle, eigene Tools und eigenes Wissen. Sie arbeiten autonom an echten Business-Aufgaben — nicht an Chat-Experimenten. Genau dieses System lernst du im Guide zu bauen.',
+  overviewImage: '/team-overview.png',
+  overviewCaption: 'Mein 3D-Office — Lisa, Patricia, Marcus, Max, Liam, Emilija.',
+  agents: [
+    {
+      image: '/lisa-working.png',
+      name: 'Lisa',
+      role: 'Accounting & Finance',
+      body:
+        'Zieht Stripe-Zahlungen, erstellt Billingo-Rechnungen, lädt Belege in Drive. Kommuniziert direkt mit der Steuerberaterin.',
+    },
+    {
+      image: '/marcus-working.png',
+      name: 'Marcus',
+      role: 'AI Engineer & Project Manager',
+      body:
+        'Schreibt Specs, baut Websites und Voice Agents, trackt Projekte, redigiert Code. Der Agent, der diesen Guide mit-gebaut hat.',
+    },
+    {
+      image: '/team-meeting.png',
+      name: 'Und drei mehr',
+      role: 'Patricia, Max, Emilija, Liam',
+      body:
+        'Personal Assistant, CEO-Orchestrator, Content-Strategie, Sales. Jeder mit eigenem System-Prompt und eigenen Tools.',
+    },
+  ],
+} as const
+
+export const chatPreview = {
+  eyebrow: 'SO FÜHLT SICH DAS AN',
+  heading: 'Alltagsgespräch. Kein Prompt-Engineering.',
+  subheading:
+    'Du klickst den Agenten an, den du brauchst, und sagst was zu tun ist. Er führt die Aktion mit echten Tools aus und meldet zurück. So einfach. Und so ernst wie eine Chat-Nachricht an einen Kollegen.',
+  image: '/chat-interface.png',
+  imageCaption: 'Echtes Interface aus meinem AI-Office.',
 } as const
 
 export const whatsInside = {
-  eyebrow: 'WAS DU BEKOMMST',
+  eyebrow: 'WAS IM GUIDE STEHT',
   heading: 'Substanz statt Übersicht.',
   subheading:
     'Keine KI-Hype-Broschüre. Eine konkrete Anleitung, wie moderne KI-Teams wirklich funktionieren — mit den Mustern, die ich in meinem eigenen System einsetze.',
@@ -40,13 +106,13 @@ export const whatsInside = {
       n: '01',
       title: 'Was Markdown-Dateien wirklich sind',
       body:
-        'MD-Files sind kein Notizblock. Sie sind die Persönlichkeit, das Wissen und die Anweisungen deiner KI-Mitarbeiter. Wir gehen durch, welche Dateien für welchen Zweck da sind.',
+        'MD-Files sind kein Notizblock. Sie sind die Persönlichkeit, das Wissen und die Anweisungen deiner KI-Mitarbeiter. Welche Datei für welchen Zweck.',
     },
     {
       n: '02',
       title: 'Die Anatomie eines KI-Agenten',
       body:
-        'AGENT.md, workflows.md, knowledge.md, tools.md. Was in welche Datei gehört, warum diese Trennung existiert, und wie du deinen eigenen Agenten sauber strukturierst.',
+        'AGENT.md, workflows.md, knowledge.md, tools.md. Was in welche Datei gehört, warum die Trennung wichtig ist, und wie du deinen eigenen Agenten sauber strukturierst.',
     },
     {
       n: '03',
@@ -58,16 +124,18 @@ export const whatsInside = {
       n: '04',
       title: 'Vom ersten Prompt zum Team in 72h',
       body:
-        'Ein realistischer Fahrplan: welche Entscheidungen in Woche 1 fallen müssen, welche Fehler du vermeidest, wo du aus eigener Erfahrung weißt was geht — und was nicht.',
+        'Ein realistischer Fahrplan: welche Entscheidungen in Woche 1 fallen, welche Fehler du vermeidest, was du aus meiner Erfahrung direkt übernehmen kannst.',
     },
   ],
 } as const
 
 export const socialProof = {
+  eyebrow: 'WARUM DIESER GUIDE',
   quote:
-    'Ich hab dieses Team selbst gebaut und nutze es täglich für Buchhaltung, Termine, Code und Kundenprojekte. Der Guide ist meine komplette Anleitung — damit du das Gleiche nachbauen kannst, ohne drei Monate zu experimentieren.',
+    'Ich hab dieses Team für mich selbst gebaut, bevor ich angefangen hab, es jemandem beizubringen. Jeder Screenshot, jedes Code-Snippet, jeder Workflow in diesem Guide ist aus meinem echten Arbeitsalltag.',
   name: 'Aleksa Spalevic',
-  role: 'Gründer KI-Schule',
+  role: 'Gründer KI-Schule · Spalevic Consulting',
+  photoUrl: '/aleksa-hero.png',
 } as const
 
 export const faq = {

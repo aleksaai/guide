@@ -1,5 +1,9 @@
 import { Helmet } from 'react-helmet-async'
 import { Hero } from '../components/Hero'
+import { StatsStrip } from '../components/StatsStrip'
+import { FormSection } from '../components/FormSection'
+import { MyTeam } from '../components/MyTeam'
+import { ChatPreview } from '../components/ChatPreview'
 import { WhatsInside } from '../components/WhatsInside'
 import { SocialProof } from '../components/SocialProof'
 import { FAQ } from '../components/FAQ'
@@ -17,6 +21,10 @@ export default function Home() {
         <link rel="canonical" href="https://guide.ki-hochschule.de/" />
       </Helmet>
       <Hero />
+      <StatsStrip />
+      <FormSection />
+      <MyTeam />
+      <ChatPreview />
       <WhatsInside />
       <SocialProof />
       <FAQ />

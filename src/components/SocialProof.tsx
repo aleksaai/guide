@@ -12,15 +12,22 @@ export function SocialProof() {
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center"
         >
-          <blockquote className="text-xl sm:text-2xl lg:text-3xl font-medium text-ink leading-relaxed tracking-tight">
+          <div className="eyebrow mb-6">{socialProof.eyebrow}</div>
+          <blockquote className="text-xl sm:text-2xl lg:text-[28px] font-medium text-ink leading-relaxed tracking-tight">
             &ldquo;{socialProof.quote}&rdquo;
           </blockquote>
           <figcaption className="mt-8 flex items-center justify-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-soft text-ink font-semibold text-sm border border-line">
-              AS
+            <div className="h-14 w-14 overflow-hidden rounded-full border border-line bg-soft shadow-sm">
+              <img
+                src={socialProof.photoUrl}
+                alt={socialProof.name}
+                className="h-full w-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div className="text-left">
-              <div className="text-ink font-semibold text-sm">{socialProof.name}</div>
+              <div className="text-ink font-semibold text-[15px]">{socialProof.name}</div>
               <div className="text-muted text-xs">{socialProof.role}</div>
             </div>
           </figcaption>
