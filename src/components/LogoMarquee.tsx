@@ -37,7 +37,7 @@ export function LogoMarquee({ size = 'md', className, gapClassName }: Props) {
               src={`/company-logos/${logo.file}`}
               alt={i < integrations.logos.length ? logo.name : ''}
               className={cn(
-                'h-full w-auto select-none object-contain opacity-70 transition hover:opacity-100',
+                'h-full w-auto select-none object-contain',
                 maxWidthClass
               )}
               loading="lazy"
