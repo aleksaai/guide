@@ -6,10 +6,13 @@
 
 ## TL;DR
 
-- Frontend ist **live lokal + gepusht** (Stand 2026-04-18, Commit `76d39bd`).
+- Frontend ist **live lokal + gepusht**.
+  - v0.1 (2026-04-18, `76d39bd` + `b5a8a5f`): initial Build + Docs
+  - **v0.2 (2026-04-19, `40eb61a`): Warm/Personal Layout-Upgrade** — Aleksa's Portrait im Hero, echte Team-Screenshots, StatsStrip, FormSection als eigener Block, MyTeam + ChatPreview Sections, echtes Avatar in SocialProof
 - Backend (Supabase + Resend + Edge Functions) ist **komplett offen**, Aleksa
   muss explizit greenlighten bevor du Supabase anfasst.
 - Deploy (Netlify + DNS) ist **komplett offen**, kommt nach dem Backend.
+- **Known issue beim Push:** große Binary-Assets (hero-image 1.6MB) können `HTTP 400 send-pack` triggern. Fix: `git config http.postBuffer 524288000` im Repo, dann retry.
 
 ## Wo alles liegt
 
