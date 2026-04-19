@@ -28,7 +28,7 @@ export function WhatsInside() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.4, delay: i * 0.05, ease: 'easeOut' }}
-              className="rounded-lg border border-line bg-soft p-6 sm:p-7"
+              className="glass-panel glass-card-hover rounded-lg p-6 sm:p-7"
             >
               <div className="text-2xl font-semibold text-accent mb-3">{item.n}</div>
               <h3 className="text-base font-semibold text-ink mb-2 leading-snug">

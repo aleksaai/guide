@@ -22,11 +22,11 @@ export function MyTeam() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="mt-10 sm:mt-12"
         >
-          <div className="relative overflow-hidden rounded-lg border border-line bg-soft shadow-glass">
+          <div className="relative glass-panel-elevated overflow-hidden rounded-xl p-2 sm:p-3">
             <img
               src={myTeam.overviewImage}
               alt="Übersicht des KI-Teams im 3D-Office"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover rounded-lg"
               loading="lazy"
               decoding="async"
             />
@@ -45,9 +45,9 @@ export function MyTeam() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.4, delay: i * 0.05, ease: 'easeOut' }}
-              className="flex flex-col overflow-hidden rounded-lg border border-line bg-white"
+              className="glass-panel glass-card-hover flex flex-col overflow-hidden rounded-lg"
             >
-              <div className="aspect-[4/3] overflow-hidden bg-soft">
+              <div className="aspect-[4/3] overflow-hidden bg-white/30">
                 <img
                   src={agent.image}
                   alt={`${agent.name} — ${agent.role}`}

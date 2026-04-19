@@ -24,13 +24,13 @@
   }
 
   body {
-    @apply bg-white text-ink font-sans;
+    @apply text-ink font-sans;
     font-feature-settings: 'ss01', 'cv11';
-    background: hsl(220 16% 98%);
+    background: hsl(220 22% 96%);
     min-height: 100vh;
   }
 
-  /* Subtle blue mesh-gradient backdrop per BrandKit 05-glass-effect */
+  /* Vivid blue mesh-gradient backdrop — gives glass panels color to blur */
   body::before {
     content: '';
     position: fixed;
@@ -38,9 +38,10 @@
     z-index: -1;
     pointer-events: none;
     background:
-      radial-gradient(ellipse 80% 60% at 10% 20%, hsla(217 80% 75% / 0.10), transparent 60%),
-      radial-gradient(ellipse 60% 50% at 90% 80%, hsla(230 60% 70% / 0.08), transparent 60%),
-      radial-gradient(ellipse 70% 40% at 50% 10%, hsla(200 60% 75% / 0.06), transparent 60%);
+      radial-gradient(ellipse 90% 65% at 8% 15%, hsla(217 100% 72% / 0.22), transparent 65%),
+      radial-gradient(ellipse 70% 55% at 92% 75%, hsla(230 85% 65% / 0.18), transparent 65%),
+      radial-gradient(ellipse 80% 45% at 50% 5%, hsla(200 90% 70% / 0.14), transparent 65%),
+      radial-gradient(ellipse 60% 50% at 70% 40%, hsla(220 80% 80% / 0.10), transparent 70%);
   }
 
   /* Focus ring — accent color, subtle */
@@ -63,19 +64,34 @@
   }
 
   .glass-panel {
-    background: hsla(0 0% 100% / 0.55);
-    backdrop-filter: blur(40px) saturate(180%);
-    -webkit-backdrop-filter: blur(40px) saturate(180%);
-    border: 0.5px solid hsla(0 0% 100% / 0.6);
+    background: hsla(0 0% 100% / 0.5);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border: 1px solid hsla(0 0% 100% / 0.6);
     @apply rounded-lg shadow-glass;
   }
 
   .glass-panel-elevated {
-    background: hsla(0 0% 100% / 0.6);
-    backdrop-filter: blur(60px) saturate(200%);
-    -webkit-backdrop-filter: blur(60px) saturate(200%);
-    border: 0.5px solid hsla(0 0% 100% / 0.65);
+    background: hsla(0 0% 100% / 0.55);
+    backdrop-filter: blur(44px) saturate(200%);
+    -webkit-backdrop-filter: blur(44px) saturate(200%);
+    border: 1px solid hsla(0 0% 100% / 0.7);
     @apply rounded-lg shadow-glass-elevated;
+    /* subtle top highlight gradient */
+    background-image: linear-gradient(180deg, hsla(0 0% 100% / 0.35) 0%, transparent 40%);
+  }
+
+  .glass-card-hover {
+    @apply transition duration-300;
+  }
+  .glass-card-hover:hover {
+    background: hsla(0 0% 100% / 0.68);
+    transform: translateY(-2px);
+    box-shadow:
+      0 0 0 0.5px rgba(102, 164, 255, 0.15),
+      0 2px 4px rgba(0, 0, 0, 0.03),
+      0 12px 32px rgba(102, 164, 255, 0.10),
+      0 24px 60px rgba(0, 0, 0, 0.05);
   }
 
   /* Inputs — neutral, subtle borders, premium feel */

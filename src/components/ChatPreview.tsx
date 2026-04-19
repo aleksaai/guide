@@ -3,7 +3,7 @@ import { chatPreview } from '../config/content'
 
 export function ChatPreview() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-soft">
+    <section className="py-16 sm:py-20 lg:py-24">
       <div className="container-site">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
           <motion.div
@@ -29,11 +29,11 @@ export function ChatPreview() {
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
           >
-            <div className="relative overflow-hidden rounded-lg border border-line bg-white shadow-glass-elevated">
+            <div className="glass-panel-elevated relative overflow-hidden rounded-xl p-2 sm:p-3">
               <img
                 src={chatPreview.image}
                 alt={chatPreview.imageCaption}
-                className="h-auto w-full"
+                className="h-auto w-full rounded-lg"
                 loading="lazy"
                 decoding="async"
               />

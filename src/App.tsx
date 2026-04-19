@@ -9,7 +9,7 @@ import NotFound from './pages/NotFound'
 
 export default function App() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col pt-3 sm:pt-5">
       <Navbar />
       <main className="flex-1">
         <Routes>
