@@ -4,7 +4,13 @@ import { ArrowRight } from 'lucide-react'
 export function BottomCTA() {
   function scrollToForm(e: React.MouseEvent) {
     e.preventDefault()
-    document.getElementById('form')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    const target = document.getElementById('form')
+    if (!target) return
+    if (window.__lenis) {
+      window.__lenis.scrollTo(target, { offset: -24, duration: 1.4 })
+    } else {
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
   }
 
   return (

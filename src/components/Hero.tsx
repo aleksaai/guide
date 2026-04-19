@@ -5,29 +5,25 @@ import { hero } from '../config/content'
 export function Hero() {
   function scrollToForm(e: React.MouseEvent) {
     e.preventDefault()
-    document.getElementById('form')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    const target = document.getElementById('form')
+    if (!target) return
+    if (window.__lenis) {
+      window.__lenis.scrollTo(target, { offset: -24, duration: 1.4 })
+    } else {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
   }
 
   return (
     <section className="relative pt-10 pb-12 sm:pt-14 sm:pb-16 lg:pt-20 lg:pb-20">
       <div className="container-site">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          {/* 1. Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="eyebrow"
-          >
-            {hero.eyebrow}
-          </motion.div>
-
-          {/* 2. Title */}
+          {/* 1. Title */}
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.05, ease: 'easeOut' }}
-            className="mt-5 text-display font-semibold text-ink heading-tight"
+            className="text-display font-semibold text-ink heading-tight"
           >
             {hero.headlinePre}{' '}
             <em className="accent-word whitespace-nowrap">{hero.headlineAccent}</em>
