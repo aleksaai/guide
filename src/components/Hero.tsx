@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
 import { hero } from '../config/content'
+import { LogoMarquee } from './LogoMarquee'
 
 export function Hero() {
   function scrollToForm(e: React.MouseEvent) {
@@ -58,16 +59,15 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Byline directly under image */}
+          {/* Silent logo marquee directly under image */}
           <motion.div
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.15, ease: 'easeOut' }}
-            className="mt-5 text-sm text-muted"
+            transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
+            className="mt-8 sm:mt-10 w-full max-w-2xl"
+            aria-label="Integrierte Tools"
           >
-            <span className="text-muted/70">{hero.byline.prefix} </span>
-            <span className="font-medium text-ink">{hero.byline.name}</span>
-            <span className="text-muted">, {hero.byline.role}</span>
+            <LogoMarquee size="sm" />
           </motion.div>
 
           {/* 4. Subheadline */}
