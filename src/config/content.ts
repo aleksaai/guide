@@ -57,7 +57,7 @@ export const formBlock = {
 
 export const myTeam = {
   eyebrow: 'DAS IST MEIN ECHTES TEAM',
-  heading: 'Sieben Agenten. Ein System.',
+  heading: 'Sechs Agenten. Ein System.',
   subheading:
     'Jeder Agent hat eine klare Rolle, eigene Tools und eigenes Wissen. Sie arbeiten autonom an echten Business-Aufgaben — nicht an Chat-Experimenten. Genau dieses System lernst du im Guide zu bauen.',
   overviewImage: '/team-overview.png',
@@ -79,7 +79,7 @@ export const myTeam = {
     },
     {
       image: '/team-meeting.png',
-      name: 'Und drei mehr',
+      name: 'Und vier mehr',
       role: 'Patricia, Max, Emilija, Liam',
       body:
         'Personal Assistant, CEO-Orchestrator, Content-Strategie, Sales. Jeder mit eigenem System-Prompt und eigenen Tools.',
@@ -135,7 +135,7 @@ export const socialProof = {
     'Ich hab dieses Team für mich selbst gebaut, bevor ich angefangen hab, es jemandem beizubringen. Jeder Screenshot, jedes Code-Snippet, jeder Workflow in diesem Guide ist aus meinem echten Arbeitsalltag.',
   name: 'Aleksa Spalevic',
   role: 'Gründer KI-Schule · Spalevic Consulting',
-  photoUrl: '/aleksa-hero.png',
+  photoUrl: '/aleksa-profile.png',
 } as const
 
 export const faq = {

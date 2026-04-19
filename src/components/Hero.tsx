@@ -62,12 +62,24 @@ export function Hero() {
             </div>
           </motion.div>
 
+          {/* Byline directly under image */}
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.15, ease: 'easeOut' }}
+            className="mt-5 text-sm text-muted"
+          >
+            <span className="text-muted/70">{hero.byline.prefix} </span>
+            <span className="font-medium text-ink">{hero.byline.name}</span>
+            <span className="text-muted">, {hero.byline.role}</span>
+          </motion.div>
+
           {/* 4. Subheadline */}
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2, ease: 'easeOut' }}
-            className="mt-10 sm:mt-12 max-w-xl text-[17px] sm:text-lg text-muted leading-relaxed"
+            className="mt-8 sm:mt-10 max-w-xl text-[17px] sm:text-lg text-muted leading-relaxed"
           >
             {hero.subheadline}
           </motion.p>
@@ -92,22 +104,17 @@ export function Hero() {
             ))}
           </motion.div>
 
-          {/* 6. CTA + byline */}
+          {/* 6. CTA */}
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.3, ease: 'easeOut' }}
-            className="mt-8 flex flex-col items-center gap-4"
+            className="mt-8 flex flex-col items-center"
           >
             <button onClick={scrollToForm} className="btn-accent">
               {hero.cta}
               <ArrowDown className="h-4 w-4" />
             </button>
-            <div className="text-sm text-muted">
-              <span className="text-muted/70">{hero.byline.prefix} </span>
-              <span className="font-medium text-ink">{hero.byline.name}</span>
-              <span className="text-muted">, {hero.byline.role}</span>
-            </div>
           </motion.div>
         </div>
       </div>

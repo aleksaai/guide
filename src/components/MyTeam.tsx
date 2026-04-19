@@ -8,7 +8,7 @@ export function MyTeam() {
         <div className="max-w-2xl">
           <div className="eyebrow mb-4">{myTeam.eyebrow}</div>
           <h2 className="text-h1 font-semibold text-ink heading-tight">
-            Sieben Agenten. <em className="accent-word">Ein</em> System.
+            Sechs Agenten. <em className="accent-word">Ein</em> System.
           </h2>
           <p className="mt-4 text-[17px] text-muted leading-relaxed">{myTeam.subheading}</p>
           <div className="accent-line mt-6" />
