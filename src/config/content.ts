@@ -48,6 +48,28 @@ export const stats = {
   ],
 } as const
 
+export const integrations = {
+  eyebrow: 'INTEGRIERT IN DEIN STACK',
+  heading: 'Deine KI-Mitarbeiter nutzen deine echten Tools.',
+  subheading:
+    'Jeder Agent kann mit allen Tools arbeiten, die in deinem Unternehmen schon laufen — von Gmail und Slack bis Stripe, Supabase und Airtable. Der Guide zeigt dir, wie du die Tools anhängst, die du wirklich brauchst.',
+  logos: [
+    { file: 'claude.png', name: 'Claude' },
+    { file: 'supabase.png', name: 'Supabase' },
+    { file: 'gmail.png', name: 'Gmail' },
+    { file: 'slack.png', name: 'Slack' },
+    { file: 'stripe.png', name: 'Stripe' },
+    { file: 'make.png', name: 'Make.com' },
+    { file: 'airtable.png', name: 'Airtable' },
+    { file: 'pipedrive.png', name: 'Pipedrive' },
+    { file: 'wise.png', name: 'Wise' },
+    { file: 'lexoffice.png', name: 'LexOffice' },
+    { file: 'meta.png', name: 'Meta' },
+    { file: 'canva.png', name: 'Canva' },
+    { file: 'instantly.png', name: 'Instantly' },
+  ],
+} as const
+
 export const formBlock = {
   eyebrow: 'IN UNTER 60 SEKUNDEN',
   heading: 'Trag dich ein. Bekomm den Guide.',

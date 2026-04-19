@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import { Hero } from '../components/Hero'
+import { Integrations } from '../components/Integrations'
 import { StatsStrip } from '../components/StatsStrip'
 import { FormSection } from '../components/FormSection'
 import { MyTeam } from '../components/MyTeam'
@@ -21,6 +22,7 @@ export default function Home() {
         <link rel="canonical" href="https://guide.ki-hochschule.de/" />
       </Helmet>
       <Hero />
+      <Integrations />
       <StatsStrip />
       <FormSection />
       <MyTeam />

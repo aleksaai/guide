@@ -29,7 +29,7 @@ export function Navbar() {
               href="https://ki-hochschule.de/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center whitespace-nowrap rounded-full px-3.5 py-2 text-[13px] font-medium text-muted transition hover:text-ink hover:bg-white/60"
+              className="btn-glass-ghost hidden sm:inline-flex px-3.5 py-1.5 text-[12px] sm:text-[13px]"
             >
               Zur KI-Schule
             </a>
@@ -37,7 +37,7 @@ export function Navbar() {
               href="https://app.ki-hochschule.de/home"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center whitespace-nowrap rounded-full bg-ink px-4 py-1.5 text-[12px] font-semibold text-white transition hover:bg-ink/90 sm:px-5 sm:py-2 sm:text-[13px]"
+              className="btn-glass-primary px-4 py-1.5 text-[12px] sm:px-5 sm:py-2 sm:text-[13px]"
             >
               Log In
             </a>
