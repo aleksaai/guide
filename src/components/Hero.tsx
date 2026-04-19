@@ -49,15 +49,15 @@ export function Hero() {
                   'radial-gradient(ellipse at center, rgba(102,164,255,0.30) 0%, rgba(142,185,255,0.12) 45%, transparent 75%)',
               }}
             />
-            <div className="relative mx-auto aspect-[4/3] w-full max-w-md overflow-hidden rounded-xl">
+            <div className="relative mx-auto w-full max-w-2xl overflow-hidden rounded-xl">
               <img
                 src="/aleksa-hero.png"
                 alt="Aleksa Spalevic — Gründer der KI-Schule"
-                className="h-full w-full object-cover"
+                className="block h-auto w-full"
                 loading="eager"
                 decoding="async"
-                width={1200}
-                height={900}
+                width={1920}
+                height={1080}
               />
             </div>
           </motion.div>
