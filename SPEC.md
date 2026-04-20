@@ -51,11 +51,16 @@ genommen werden; zugänglich genug, dass Einsteiger nicht abschrecken.
 | Feld | Typ | Nullable | Notiz |
 |---|---|---|---|
 | `id` | uuid | NO | `default gen_random_uuid()` |
-| `email` | text | NO | UNIQUE (case-insensitive via citext oder lower-Trigger) |
+| `email` | citext | NO | UNIQUE (case-insensitive) |
 | `first_name` | text | NO | |
 | `last_name` | text | NO | |
 | `company` | text | YES | |
 | `role` | text | YES | Enum-Values: `founder`, `consultant`, `employed`, `selbststaendig`, `student`, `other` |
+| `knows_ki_schule` | text | YES | `yes` / `no` — v2 Step 2 |
+| `wants_exchange` | text | YES | `yes` / `maybe` / `no` — v2 Step 2 |
+| `phone` | text | YES | Nur gesetzt wenn `wants_exchange = yes` |
+| `best_reachable` | text | YES | `morning` / `noon` / `afternoon` / `evening` / `flexible` |
+| `additional_info` | text | YES | Freitextfeld |
 | `doi_token` | uuid | NO | `default gen_random_uuid()` — Double-Opt-In Link |
 | `confirmed_at` | timestamptz | YES | NULL = nicht bestätigt |
 | `guide_delivered_at` | timestamptz | YES | Wann PDF-Mail raus ging |
@@ -80,7 +85,21 @@ darf schreiben/lesen. Keine Client-Direktzugriffe.
 
 ### `ki-guide-lead-submit`
 
-- **Input:** `{firstName, lastName, email, company?, role?, newsletterConsent, source?}`
+- **Input (v2 Multi-Step):**
+  ```
+  {
+    firstName, lastName, email,
+    company?, role?,
+    knowsKiSchule: 'yes' | 'no',
+    wantsExchange: 'yes' | 'maybe' | 'no',
+    phone?,              // required if wantsExchange === 'yes'
+    bestReachable?,      // required if wantsExchange === 'yes'
+    additionalInfo?,
+    privacyConsent: true,
+    newsletterConsent?,
+    source?
+  }
+  ```
 - **Validiert:** zod-Schema, E-Mail-Format, required fields
 - **Schreibt:** Row in `ki_schule_leads` mit `doi_token = gen_random_uuid()`
 - **Sendet:** Bestätigungsmail via **Resend** (Sender: `noreply@projekt.aleksa.ai`,

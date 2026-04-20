@@ -26,7 +26,7 @@ lucide-react, Lenis, Playwright).
 ### Step 2 — Supabase Schema + Storage · ⏳ (GATED)
 _Nicht ausgeführt. Braucht Aleksas finales OK (Phase 2)._
 
-Migration-Plan:
+Migration-Plan (v2 — inkl. Multi-Step-Form-Felder):
 ```sql
 create extension if not exists citext;
 
@@ -37,6 +37,13 @@ create table public.ki_schule_leads (
   last_name text not null,
   company text,
   role text check (role in ('founder','consultant','employed','selbststaendig','student','other')),
+  -- v2 Step 2 fields
+  knows_ki_schule text check (knows_ki_schule in ('yes','no')),
+  wants_exchange  text check (wants_exchange  in ('yes','maybe','no')),
+  phone text,
+  best_reachable text check (best_reachable in ('morning','noon','afternoon','evening','flexible')),
+  additional_info text,
+  -- DOI + delivery state
   doi_token uuid unique not null default gen_random_uuid(),
   confirmed_at timestamptz,
   guide_delivered_at timestamptz,
@@ -51,6 +58,7 @@ create table public.ki_schule_leads (
 create index on public.ki_schule_leads (doi_token);
 create index on public.ki_schule_leads (email);
 create index on public.ki_schule_leads (created_at desc);
+create index on public.ki_schule_leads (wants_exchange) where wants_exchange = 'yes';
 
 alter table public.ki_schule_leads enable row level security;
 -- NO policies defined intentionally → only service_role can access

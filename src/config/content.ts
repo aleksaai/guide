@@ -200,3 +200,61 @@ export const roleOptions = [
   { value: 'student', label: 'Student:in' },
   { value: 'other', label: 'Sonstiges' },
 ] as const
+
+// ── Multi-Step Form (Step 1 collects core data, Step 2 collects
+// interest-level + optional outreach info + consent)
+
+export const formStep1 = {
+  eyebrow: 'SCHRITT 1 VON 2',
+  heading: 'Wer bist du?',
+  subheading: 'Name und E-Mail reichen. Firma und Rolle helfen uns, den Guide später mit passenden Beispielen zu vertiefen.',
+  submitLabel: 'Guide jetzt holen',
+} as const
+
+export const formStep2 = {
+  eyebrow: 'SCHRITT 2 VON 2',
+  heading: 'Fast fertig.',
+  subheading: 'Zwei kurze Fragen, dann landet der Guide in deiner Inbox.',
+  backLabel: 'Zurück',
+  submitLabel: 'Guide absenden',
+} as const
+
+export const knowsKiSchule = {
+  question: 'Kennst du die KI-Schule schon?',
+  options: [
+    { value: 'yes', label: 'Ja, kenne ich' },
+    { value: 'no', label: 'Nein, noch nicht' },
+  ],
+  introWhenNo: {
+    heading: 'Kurz: was die KI-Schule ist.',
+    body: 'Wir sind eine Coaching- und Community-Plattform rund um KI in der Praxis. Zwei Säulen, die sich ergänzen — du wählst, was dich interessiert.',
+    pillars: [
+      {
+        name: 'Community',
+        body: 'Vernetzung mit Gleichgesinnten aus der KI-Bubble. Austausch, Events, Diskussionen — du bist Teil eines wachsenden Netzwerks, das sich gegenseitig schneller macht.',
+      },
+      {
+        name: 'Selbstständigkeit',
+        body: 'Wir helfen dir, im KI-Bereich Fuß zu fassen. Von den ersten Agenten-Projekten bis zum Aufbau einer eigenen KI-Agentur — 1:1-Coaching und Playbooks aus echten Kundenprojekten.',
+      },
+    ],
+  },
+} as const
+
+export const wantsExchange = {
+  question: 'Hättest du Interesse, dich dazu mal mit mir auszutauschen?',
+  subtext: 'Unverbindlich. 15 Minuten am Telefon, damit wir schauen, ob die KI-Schule zu dir passt.',
+  options: [
+    { value: 'yes', label: 'Ja, gerne' },
+    { value: 'maybe', label: 'Vielleicht später' },
+    { value: 'no', label: 'Erstmal nicht' },
+  ],
+} as const
+
+export const reachableOptions = [
+  { value: 'morning', label: 'Vormittags (9–12 Uhr)' },
+  { value: 'noon', label: 'Mittags (12–14 Uhr)' },
+  { value: 'afternoon', label: 'Nachmittags (14–18 Uhr)' },
+  { value: 'evening', label: 'Abends (ab 18 Uhr)' },
+  { value: 'flexible', label: 'Flexibel — schreib mir einfach' },
+] as const
