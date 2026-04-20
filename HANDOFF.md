@@ -6,13 +6,25 @@
 
 ## TL;DR
 
-- Frontend ist **live lokal + gepusht**.
-  - v0.1 (2026-04-18, `76d39bd` + `b5a8a5f`): initial Build + Docs
-  - **v0.2 (2026-04-19, `40eb61a`): Warm/Personal Layout-Upgrade** — Aleksa's Portrait im Hero, echte Team-Screenshots, StatsStrip, FormSection als eigener Block, MyTeam + ChatPreview Sections, echtes Avatar in SocialProof
-- Backend (Supabase + Resend + Edge Functions) ist **komplett offen**, Aleksa
-  muss explizit greenlighten bevor du Supabase anfasst.
-- Deploy (Netlify + DNS) ist **komplett offen**, kommt nach dem Backend.
-- **Known issue beim Push:** große Binary-Assets (hero-image 1.6MB) können `HTTP 400 send-pack` triggern. Fix: `git config http.postBuffer 524288000` im Repo, dann retry.
+**Status: ✅ LIVE in Produktion** seit 2026-04-20. `guide.ki-hochschule.de` funktioniert Ende-zu-Ende — Multi-Step-Form, DOI-Mail, 24h-Signed-URL-Delivery, interne Notification bei `wants_exchange=yes`.
+
+Historie:
+- v0.1 (2026-04-18, `76d39bd` + `b5a8a5f`): initial Build + Docs
+- v0.2 (2026-04-19, `40eb61a`): Warm/Personal Layout-Upgrade
+- v0.3 (2026-04-19, `e1dc784`): Hero centered flow
+- v0.4 (2026-04-19, `d6dc7e7`): Glass-3D-Buttons + Integrations-Marquee
+- v0.5 (2026-04-19, `ba6e243`): Lenis smooth scroll + kein Eyebrow mehr
+- v0.6 (2026-04-20, `9c800eb`): Multi-Step-Form + Email-Templates-Spec
+- v0.7 (2026-04-20, `fdb0d5c`): Team-Overview-Video statt statischem Bild
+- v0.8 (2026-04-20, `b2d6366`): Funnel-Content gegen v2-PDF abgeglichen (37 Seiten, 48 Kapitel)
+- v0.9 (2026-04-20, `2215182`): Netlify-Config ready
+- v1.0 (2026-04-20, `4f0cb75`): **LIVE** — Supabase + Edge Functions + DNS + Navbar-CSS-Fix
+
+**Learnings aus dem Build:** komplett dokumentiert in `ai-team/agents/marcus-engineer/knowledge.md` unter zwei Abschnitten:
+- *Vite + esbuild CSS-Minifier merged prefixed/unprefixed Properties (2026-04-20)*
+- *Lead-Magnet-Funnel End-to-End-Pattern (2026-04-20)*
+
+**Known issue beim Push:** große Binary-Assets können `HTTP 400 send-pack` triggern. Fix: `git config http.postBuffer 524288000` im Repo.
 
 ## Wo alles liegt
 
