@@ -25,9 +25,9 @@ export const hero = {
   headlineAccent: 'KI-Team',
   headlinePost: '.',
   subheadline:
-    'Ich hab mein komplettes Backoffice — Buchhaltung, Assistenz, Engineering — als virtuelles KI-Team gebaut. Der Guide zeigt dir Schritt für Schritt, wie du das für dich selbst nachbaust.',
+    'Ich hab mein komplettes Backoffice — Buchhaltung, Assistenz, Engineering, sogar einen Voice-Agent am Telefon — als virtuelles KI-Team gebaut. Der Guide zeigt dir Schritt für Schritt, wie du das selbst nachbaust. Inklusive sechs Monaten Lessons Learned.',
   trustPills: [
-    '12.000+ Wörter',
+    '6 Monate Lessons Learned',
     'Praxis, keine Theorie',
     'Live im Einsatz seit 2026',
   ],
@@ -41,10 +41,10 @@ export const hero = {
 
 export const stats = {
   items: [
-    { value: '80+', label: 'Seiten' },
-    { value: '12.400', label: 'Wörter' },
-    { value: '40+', label: 'Screenshots' },
-    { value: '4', label: 'fertige Agent-Templates' },
+    { value: '37', label: 'Seiten' },
+    { value: '48', label: 'Kapitel' },
+    { value: '9', label: 'Teile' },
+    { value: '6', label: 'Monate Praxis' },
   ],
 } as const
 
@@ -122,31 +122,31 @@ export const whatsInside = {
   eyebrow: 'WAS IM GUIDE STEHT',
   heading: 'Substanz statt Übersicht.',
   subheading:
-    'Keine KI-Hype-Broschüre. Eine konkrete Anleitung, wie moderne KI-Teams wirklich funktionieren — mit den Mustern, die ich in meinem eigenen System einsetze.',
+    'Keine KI-Hype-Broschüre. Eine konkrete Anleitung, wie moderne KI-Teams wirklich funktionieren — mit den Mustern, die ich in meinem eigenen System täglich nutze.',
   items: [
     {
       n: '01',
-      title: 'Was Markdown-Dateien wirklich sind',
+      title: 'Die 4 Kerndateien jedes Agenten',
       body:
-        'MD-Files sind kein Notizblock. Sie sind die Persönlichkeit, das Wissen und die Anweisungen deiner KI-Mitarbeiter. Welche Datei für welchen Zweck.',
+        'AGENT.md, workflows.md, knowledge.md, tools.md. Was in welche Datei gehört, warum die Trennung wichtig ist, und wie du deinen ersten Agenten sauber strukturierst — mit vollen Templates.',
     },
     {
       n: '02',
-      title: 'Die Anatomie eines KI-Agenten',
+      title: 'GitHub + Auto-Push + Cross-Device-Sync',
       body:
-        'AGENT.md, workflows.md, knowledge.md, tools.md. Was in welche Datei gehört, warum die Trennung wichtig ist, und wie du deinen eigenen Agenten sauber strukturierst.',
+        'Desktop-Ordner mit GitHub verbinden, Auto-Push-Hook einrichten, Keychain-Token setzen. Danach arbeitest du auf zwei Rechnern an derselben Agenten-Basis, ohne jemals manuell zu pushen.',
     },
     {
       n: '03',
-      title: 'Wie Tools angedockt werden',
+      title: 'Eigene MCP-Server in Supabase',
       body:
-        'Supabase Edge Functions, MCP-Server, Gmail, Drive, Stripe. Ein Agent ohne Tools ist ein Chat-Bot. Wir schauen uns an, wie echte Aktionen in Prod laufen.',
+        'Was Supabase ist, API-Keys sicher als Secrets, eigene Edge Functions für Tools ohne offiziellen Connector (Billingo, Wise, alles mit API). Claude schreibt den Code, du deployst per MCP.',
     },
     {
       n: '04',
-      title: 'Vom ersten Prompt zum Team in 72h',
+      title: 'Voice-Agent am Telefon',
       body:
-        'Ein realistischer Fahrplan: welche Entscheidungen in Woche 1 fallen, welche Fehler du vermeidest, was du aus meiner Erfahrung direkt übernehmen kannst.',
+        'Teil 7 zeigt Ende-zu-Ende, wie du einen Agent auf ElevenLabs + Twilio + Make.com baust. Meine Hotline nimmt Anrufe auf Ungarisch an, bucht Termine und meldet sich zurück.',
     },
   ],
 } as const
@@ -179,6 +179,10 @@ export const faq = {
     {
       q: 'Welche Tools brauche ich?',
       a: 'Claude Code (CLI), einen Ordner auf deinem Rechner, Git + GitHub, Supabase. Der Rest (Stripe, Gmail, Kalender) kommt nur rein, wenn dein Team das braucht.',
+    },
+    {
+      q: 'Kann ich auch einen KI-Agent ans Telefon bringen?',
+      a: 'Ja. Teil 7 des Guides ist ein Ende-zu-Ende-Playbook für Voice-Agents auf ElevenLabs + Twilio + Make.com. Ich hab eine Hotline für meine Assistentin auf Ungarisch und Deutsch live, plus einen Voice-Agent für einen Kunden, der Krankenfahrten bucht. Kostet im laufenden Betrieb meist unter 20 € im Monat.',
     },
     {
       q: 'Bekomme ich Updates zum Guide?',
