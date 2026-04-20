@@ -80,7 +80,6 @@
   .glass-panel {
     background: hsla(0 0% 100% / 0.5);
     backdrop-filter: blur(28px) saturate(180%);
-    -webkit-backdrop-filter: blur(28px) saturate(180%);
     border: 1px solid hsla(0 0% 100% / 0.6);
     @apply rounded-lg shadow-glass;
   }
@@ -88,7 +87,6 @@
   .glass-panel-elevated {
     background: hsla(0 0% 100% / 0.55);
     backdrop-filter: blur(44px) saturate(200%);
-    -webkit-backdrop-filter: blur(44px) saturate(200%);
     border: 1px solid hsla(0 0% 100% / 0.7);
     @apply rounded-lg shadow-glass-elevated;
     /* subtle top highlight gradient */
@@ -101,7 +99,6 @@
   .glass-navbar {
     background: hsla(0 0% 100% / 0.82);
     backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
     border: 1px solid hsla(0 0% 100% / 0.85);
     @apply rounded-full shadow-glass-elevated;
     background-image: linear-gradient(180deg, hsla(0 0% 100% / 0.45) 0%, transparent 50%);
@@ -110,7 +107,7 @@
   /* Progressive enhancement: when backdrop-filter is available, we can
      lower the base opacity so it stays readable but lets the blur carry
      more of the effect. */
-  @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  @supports (backdrop-filter: blur(1px)) {
     .glass-navbar {
       background: hsla(0 0% 100% / 0.68);
     }
@@ -148,7 +145,6 @@
       0 6px 16px hsla(217 100% 50% / 0.25),
       0 14px 32px hsla(217 100% 45% / 0.15);
     backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   }
   .btn-glass-primary:hover {
@@ -181,7 +177,6 @@
       0 1px 2px hsla(0 0% 0% / 0.04),
       0 4px 12px hsla(220 20% 30% / 0.06);
     backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   }
   .btn-glass-ghost:hover {
