@@ -1,0 +1,43 @@
+# Netlify-Konfiguration für guide.ki-hochschule.de
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA-Routing: React-Router übernimmt alle Paths
+# (Backup zum public/_redirects — beide gleichzeitig ist robuster)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Security Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Cache — Vite hängt Content-Hashes an, deshalb lang cachen
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Company-Logos sind statisch — moderat cachen
+[[headers]]
+  for = "/company-logos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Video braucht Range-Requests (für autoplay + seek)
+[[headers]]
+  for = "/team-office.mp4"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+    Accept-Ranges = "bytes"
