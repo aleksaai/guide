@@ -23,12 +23,16 @@ export function MyTeam() {
           className="mt-10 sm:mt-12"
         >
           <div className="relative glass-panel-elevated overflow-hidden rounded-xl p-2 sm:p-3">
-            <img
-              src={myTeam.overviewImage}
-              alt="Übersicht des KI-Teams im 3D-Office"
-              className="w-full h-auto object-cover rounded-lg"
-              loading="lazy"
-              decoding="async"
+            <video
+              src={myTeam.overviewVideo}
+              poster={myTeam.overviewImage}
+              className="block h-auto w-full rounded-lg"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              aria-label="Übersicht des KI-Teams im 3D-Office"
             />
           </div>
           <figcaption className="mt-3 text-center text-xs text-muted">

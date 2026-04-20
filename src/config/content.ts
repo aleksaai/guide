@@ -82,6 +82,7 @@ export const myTeam = {
   heading: 'Sechs Agenten. Ein System.',
   subheading:
     'Jeder Agent hat eine klare Rolle, eigene Tools und eigenes Wissen. Sie arbeiten autonom an echten Business-Aufgaben — nicht an Chat-Experimenten. Genau dieses System lernst du im Guide zu bauen.',
+  overviewVideo: '/team-office.mp4',
   overviewImage: '/team-overview.png',
   overviewCaption: 'Mein 3D-Office — Lisa, Patricia, Marcus, Max, Liam, Emilija.',
   agents: [
